@@ -11,6 +11,22 @@
 <body>
 
 
+    <button onclick="changeFontSize('aumentar')">Aumentar</button>
+<button onclick="changeFontSize('reduzir')">Reduzir</button><script>
+function changeFontSize(action){
+const elements = ['h1', 'h2', 'h3','p'];
+elements.map(element=>{
+
+const selector = document.querySelector(element);
+let value = getComputedStyle(selector).getPropertyValue('font-size');
+value = value.replace('px', '');
+value = action === 'aumentar' ? parseInt(value) + 1 : parseInt(value) - 1;
+selector.style.fontSize = `${value}px`;
+})
+}
+</script>
+
+
     <script src=”script.js”></script>
 
     <h1> поскольку Opal — один из самых знаковых автомобилей 80-90-х годов.</h1>
